@@ -8,7 +8,21 @@ export const Footer = () => {
 	return (
 		<footer className="border-t py-20 dark:border-neutral-800 ">
 			<Container className="px-5">
-				
+				      {PUBLICATION_LOGO ? (
+					<div className="mb-20 flex w-full flex-row justify-center">
+						<Link
+							href={'/'}
+							aria-label={`${publication.title} home page`}
+							className="flex flex-row items-center gap-5"
+						>
+							<img className="block w-40" src={PUBLICATION_LOGO} alt={publication.title} />
+						</Link>
+					</div>
+				) : (
+					<p className="mb-20 text-center text-xl font-semibold text-slate-900 dark:text-slate-50 md:text-4xl">
+						{publication.title}
+					</p>
+				)}
         <div className="grid w-full grid-cols-3 gap-5 md:grid-cols-6 lg:grid-cols-5">
           <div className="col-span-1 grid grid-cols-4 gap-5 md:col-span-4 lg:col-span-3">
             <div className="col-span-full md:col-span-2 lg:col-span-1">
@@ -81,21 +95,7 @@ export const Footer = () => {
 			</Container>
       <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
     <div class="flex justify-center text-teal-600">
-      {PUBLICATION_LOGO ? (
-					<div className="mb-20 flex w-full flex-row justify-center">
-						<Link
-							href={'/'}
-							aria-label={`${publication.title} home page`}
-							className="flex flex-row items-center gap-5"
-						>
-							<img className="block w-40" src={PUBLICATION_LOGO} alt={publication.title} />
-						</Link>
-					</div>
-				) : (
-					<p className="mb-20 text-center text-xl font-semibold text-slate-900 dark:text-slate-50 md:text-4xl">
-						{publication.title}
-					</p>
-				)}
+
     </div>
 
     <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
