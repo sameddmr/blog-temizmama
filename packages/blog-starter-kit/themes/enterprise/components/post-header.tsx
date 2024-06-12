@@ -36,7 +36,10 @@ export const PostHeader = ({ title, coverImage, date, author, readTimeInMinutes 
 		<>
 			<PostTitle>{title}</PostTitle>
 			<div className="flex flex-row flex-wrap items-center justify-center w-full gap-2 px-2 text-slate-700 dark:text-neutral-300 md:px-0">
-
+				<div className="mb-5 flex w-full flex-row items-center justify-center md:mb-0 md:w-auto md:justify-start">
+					{authorsArray.map((coAuthor, index) => (
+						
+						</div>
 					))}
 					{post.coAuthors && post.coAuthors.length > 0 && (
 						<button
