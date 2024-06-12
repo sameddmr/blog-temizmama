@@ -10,7 +10,7 @@ export const DateFormatter = ({ dateString }: Props) => {
 
 	return (
 		<>
-			<time dateTime={dateString}>{format(date, 'LLL d, yyyy')}</time>
+			<time dateTime={dateString}>{format(date, 'LLL d, m, yyyy')}</time>
 		</>
 	);
 };
