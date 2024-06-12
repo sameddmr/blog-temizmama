@@ -30,6 +30,10 @@ import {
 } from '../generated/graphql';
 import { DEFAULT_COVER } from '../utils/const';
 
+const SubscribeForm = dynamic(() =>
+	import('../components/subscribe-form').then((mod) => mod.SubscribeForm),
+);
+
 const GQL_ENDPOINT = process.env.NEXT_PUBLIC_HASHNODE_GQL_ENDPOINT;
 
 type Props = {
@@ -149,6 +153,14 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 					</div>
 
 					{allPosts.length > 0 && (
+						<div className="bg-primary-50 grid grid-cols-4 rounded-lg px-5 py-5 dark:bg-neutral-900 md:py-10">
+							<div className="col-span-full md:col-span-2 md:col-start-2">
+								<h2 className="text-primary-600 dark:text-primary-500 mb-5 text-center text-lg font-semibold">
+									Subscribe to our newsletter for updates and changelog.
+								</h2>
+								<SubscribeForm />
+							</div>
+						</div>
 					)}
 
 					{morePosts.length > 0 && (
