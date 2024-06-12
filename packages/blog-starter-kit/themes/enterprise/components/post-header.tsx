@@ -69,10 +69,6 @@ export const PostHeader = ({ title, coverImage, date, author, readTimeInMinutes 
 						</button>
 					)}
 				</div>
-				<div className="mb-5 flex w-full flex-row items-center justify-center md:mb-0 md:w-auto md:justify-start">
-					<span className="mx-3 hidden font-bold text-slate-500 md:block">&middot;</span>
-
-				</div>
 			</div>
 			{coverImage && (
 				<div className="w-full px-5 sm:mx-0">
