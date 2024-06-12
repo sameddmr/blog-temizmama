@@ -97,6 +97,13 @@ return (
         </li>
       </ul>
     </div>
+        <div className="mt-16 border-t border-gray-100 pt-8">
+      <p className="text-center text-xs/relaxed text-gray-500">
+Temizmama.com, bir Çağatay Markasıdır.
+        <br/>
+© 2008 - 2024 Temizmama.com her hakkı saklıdır.
+      </p>
+    </div>
   </Container>
 </footer>
 );
