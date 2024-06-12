@@ -19,85 +19,12 @@ return (
       {publication.title}
     </p>
     )}
-    <div className="grid w-full grid-cols-3 gap-5 md:grid-cols-6 lg:grid-cols-5">
-      <div className="col-span-1 grid grid-cols-4 gap-5 md:col-span-4 lg:col-span-3">
-        <div className="col-span-full md:col-span-2 lg:col-span-1">
-          <p className="mb-2 font-semibold text-slate-600 dark:text-neutral-200">
-            Bizi tanıyın
-          </p>
-          <ul className="flex flex-col gap-1 text-slate-700 dark:text-neutral-300">
-            <li>
-              <a href="https://temizmama.com/iletisim" className="hover:underline">
-                İletişim
-              </a>
-            </li>
-            <li>
-              <a href="https://temizmama.com/hakkimizda" className="hover:underline">
-                Hakkımızda
-              </a>
-            </li>
-            <li>
-              <a href="https://temizmama.com/sirket-bilgileri" className="hover:underline">
-                Şirket Bilgileri
-              </a>
-            </li>
-            <li>
-              <a href="https://temizmama.com/uretim-teknolojimiz" className="hover:underline">
-                Üretim Teknolojilerimiz
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="col-span-full md:col-span-2 lg:col-span-1">
-          <p className="mb-2 font-semibold text-slate-600 dark:text-neutral-200">Markalarımız</p>
-          <ul className="flex flex-col gap-1 text-slate-700 dark:text-neutral-300">
-            <li>
-              <a href="#" className="hover:underline">
-                BonaCibo
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Kennel
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Micho
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                LaMito
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div
-        className="col-span-2 flex flex-col items-end gap-5 text-right text-slate-600 dark:text-neutral-300 md:text-left">
-        <SocialLinks />
-        <p>&copy; 2023 Company Inc.</p>
-        <p>
-          <a href="#" className="hover:underline">
-            Privacy Policy
-          </a>{' '}
-          ·{' '}
-          <a href="#" className="hover:underline">
-            Terms
-          </a>
-        </p>
-      </div>
-    </div>
-
-    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+     <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="flex justify-center text-teal-600">
 
       </div>
 
       <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-        Sevimli dostlarımız için en taze mamayı sunan Temizmama sayesinde kedi &amp;amp; köpek bakımı ile ilgili
-        bilinmesi gerekenlerin hepsi bu sayfada! Okuyun, öğrenin!
       </p>
 
       <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
@@ -106,7 +33,7 @@ return (
         </li>
 
         <li>
-          <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Blog </a>
+          <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Mağaza </a>
         </li>
 
         <li>
