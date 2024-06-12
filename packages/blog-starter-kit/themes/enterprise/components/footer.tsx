@@ -90,13 +90,13 @@ export const Footer = () => {
                 Terms
               </a>
             </p>
-          </div>
-                        <div class="flex flex-col justify-center items-center gap-1">
+          </div>         
+        </div>
+         <div class="flex flex-col justify-center items-center gap-1">
         <p class="text-sm text-default-400">© <!-- -->2008 - 2024<!-- --> Çağatay Inc.</p>
           <a class="" href="https://temizmama.com" target="_blank" rel="noopener noreferrer" tabindex="0" role="link">
             <p class="font-normal">Deployed on</p>
           </a>
-        </div>
         </div>
 			</Container>
 		</footer>
