@@ -36,17 +36,30 @@ export const PostHeader = ({ title, coverImage, date, author, readTimeInMinutes 
 		<>
 			<PostTitle>{title}</PostTitle>
 			<div className="flex flex-row flex-wrap items-center justify-center w-full gap-2 px-2 text-slate-700 dark:text-neutral-300 md:px-0">
-				<div className="mb-5 flex w-full flex-row items-center justify-center md:mb-0 md:w-auto md:justify-start">
-					{authorsArray.map((coAuthor, index) => (
-						
+
 					))}
 					{post.coAuthors && post.coAuthors.length > 0 && (
-
+						<button
+						onClick={openCoAuthorModal}
+						style={{ zIndex: post.coAuthors?.length }}
+						className="relative -ml-3 flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border-1-1/2 border-slate-100 bg-slate-100 px-1 group-hover:border-slate-200 dark:border-slate-800 dark:bg-slate-600 dark:text-white group-hover:dark:border-slate-700 md:hidden"
+						>
+						<p className="truncate text-xs font-normal">+{post.coAuthors.length}</p>
+						</button>
 					)}
 					{!post.coAuthors?.length && (
-
+						<a
+						href={`https://hashnode.com/@${post.author.username}`}
+						className="ml-2 font-semibold text-slate-600 dark:text-white md:ml-0"
+						>
+						</a>
 					)}
 					{post.coAuthors && post.coAuthors.length > 0 && (
+						<button
+						onClick={openCoAuthorModal}
+						className="ml-2 text-left font-semibold text-slate-600 hover:underline dark:text-white"
+						>
+						<span>{post.author.name}</span>
 						{post.coAuthors && (
 							<span className="font-normal">
 							{' '}
