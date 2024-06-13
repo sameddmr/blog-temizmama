@@ -29,12 +29,6 @@ import { useEffect, useState } from 'react';
 // @ts-ignore
 import { triggerCustomWidgetEmbed } from '@starter-kit/utils/trigger-custom-widget-embed';
 
-//const AboutAuthor = dynamic(() => import('../components/about-author'), { ssr: false });
-//const Subscribe = dynamic(() => import('../components/subscribe').then((mod) => mod.Subscribe));
-//const PostComments = dynamic(() =>
-//	import('../components/post-comments').then((mod) => mod.PostComments),
-//);
-
 type PostProps = {
 	type: 'post';
 	post: PostFullFragment;
