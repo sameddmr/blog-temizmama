@@ -69,15 +69,18 @@ body {
 
 /*   scroll-up   */
 
-@media(prefers-reduced-motion: no-preference) {
-	html {
+html {
 		scroll-behavior: smooth;
 	}
+
+:root {
+	--line: hsl(0 0% 5% / 0.15);
+	--accent: canvas;
+	--padding: 2rem;
+	--distance: 10vh;
+	accent-color: hsl(0 100% 50%);
+	color-scheme: light only;
 }
-
-
-
-
 
 #cta {
 	position: sticky;
@@ -118,13 +121,6 @@ body {
 }
 
 @supports (animation-timeline: scroll()) {
-	.controls {
-		display: flex;
-		gap: 0.5rem;
-		position: fixed;
-		top: 1rem;
-		right: 1rem;
-	}
 	@property --show {
 		inherits: true;
 		initial-value: 0;
