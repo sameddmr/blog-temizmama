@@ -11,7 +11,7 @@ return (
      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
       <div className="flex justify-center text-teal-600">
     {PUBLICATION_LOGO ? (
-    <div className="mb-20 flex w-full flex-row justify-center">
+    <div className="flex w-full flex-row justify-center">
       <Link href={'/'} aria-label={`${publication.title} home page`} className="flex flex-row items-center gap-5">
       <img className="block w-40" src={PUBLICATION_LOGO} alt={publication.title} />
         <img className="block w-40" src="https://www.temizmama.biz/dist/media/img/markalar/bg-cgty.webp" alt={publication.title} />
