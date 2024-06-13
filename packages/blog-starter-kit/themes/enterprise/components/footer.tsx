@@ -18,15 +18,11 @@ return (
       </Link>
     </div>
     ) : (
-    <p className="mb-20 text-center text-xl font-semibold text-slate-900 dark:text-slate-50 md:text-4xl">
+    <p className="text-center text-xl font-semibold text-slate-900 dark:text-slate-50 md:text-4xl">
       {publication.title}
     </p>
     )}
       </div>
-
-      <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-      </p>
-
       <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
         <li>
           <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Anasayfa </a>
