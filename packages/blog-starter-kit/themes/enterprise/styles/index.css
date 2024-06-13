@@ -69,9 +69,14 @@ body {
 
 /*   scroll-up   */
 
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
 html {
-		scroll-behavior: smooth;
-	}
+	scroll-behavior: smooth;
+}
 
 :root {
 	--line: hsl(0 0% 5% / 0.15);
@@ -126,7 +131,7 @@ html {
 		initial-value: 0;
 		syntax: '<number>';
 	}
-	:root:has(#scroll) #cta {
+	#cta {
 		position: fixed;
 		bottom: var(--padding);
 		right: var(--padding);
@@ -142,7 +147,7 @@ html {
 	    0.9925 68.11%, 1
 	  );
 	}	
-	:root:has(#scroll) body {
+	body {
 		animation: show-cta both steps(1);
 		animation-timeline: scroll(root);
 		animation-range: 0 var(--distance);
@@ -151,3 +156,4 @@ html {
 		to { --show: 1; }
 	}
 }
+
