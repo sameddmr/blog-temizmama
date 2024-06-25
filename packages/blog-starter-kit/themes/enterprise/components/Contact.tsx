@@ -260,7 +260,7 @@ const Contact: React.FC<ContactProps> = ({ publication }) => {
               </div>
               <div className="col-span-2 mt-6">
                 <ReCaptcha
-                  sitekey="your-recaptcha-site-key"
+                  sitekey="6LdMIQEqAAAAAOAzB1FjU8LLNXYTGlFgZWGe80Za"
                   render="explicit"
                   verifyCallback={handleCaptchaVerify}
                   onloadCallback={() => console.log('Captcha loaded')}
