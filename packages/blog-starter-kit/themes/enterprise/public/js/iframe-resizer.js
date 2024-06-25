@@ -702,47 +702,4 @@
       );
     }
   })();
-
-
-
-
-
-
-
-
-//........................custom js..............................
-
-
-const originalTitle = document.title;
-const animationFrames = [
-    'Temizmama | 🐱',
-    'Temizmama | .🐱',
-    'Temizmama | ..🐱',
-    'Temizmama | ...🐱',
-    'Temizmama | ....🐱',
-    'Temizmama | .....🐱',
-    'Temizmama | ......🐱',
-    'Temizmama | .......🐱',
-    'Temizmama | ......🐱',
-    'Temizmama | .....🐱',
-    'Temizmama | ....🐱',
-    'Temizmama | ...🐱',
-    'Temizmama | ..🐱',
-    'Temizmama | .🐱',
-];
-let currentFrame = 0;
-let animationInterval;
-
-function animateTitle() {
-    document.title = animationFrames[currentFrame];
-    currentFrame = (currentFrame + 1) % animationFrames.length;
-}
-
-document.addEventListener('visibilitychange', function () {
-    if (document.hidden) {
-        animationInterval = setInterval(animateTitle, 100);
-    } else {
-        clearInterval(animationInterval);
-        document.title = originalTitle;
-    }
-});
+  

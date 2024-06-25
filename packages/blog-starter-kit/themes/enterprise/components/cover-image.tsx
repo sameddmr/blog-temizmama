@@ -12,7 +12,7 @@ export const CoverImage = ({ title, src, slug, priority = false }: Props) => {
 	const postURL = `/${slug}`;
 
 	const image = (
-		<div className="relative pt-[52.5%]">
+		<div className="relative pt-[52.5%] select-none">
 			<Image
 				src={src}
 				alt={`Cover Image for ${title}`}
@@ -24,7 +24,7 @@ export const CoverImage = ({ title, src, slug, priority = false }: Props) => {
 		</div>
 	);
 	return (
-		<div className="sm:mx-0">
+		<div className="relative w-full max-w-screen-lg sm:mx-0">
 			{slug ? (
 				<Link href={postURL} aria-label={title}>
 					{image}

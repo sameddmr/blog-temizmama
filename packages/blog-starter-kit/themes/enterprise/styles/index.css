@@ -2,17 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-.hashnode-content-style{
-    @apply prose break-words text-slate-950 first:prose-p:mt-0 prose-img:max-w-full prose-p:leading-snug prose-a:underline hover:prose-a:bg-primary-50 dark:hover:prose-a:text-primary-500 dark:hover:prose-a:bg-neutral-800 dark:text-neutral-50 prose-blockquote:leading-snug prose-a:leading-snug prose-figure:leading-snug prose-figcaption:leading-snug prose-pre:leading-snug prose-li:leading-snug prose-ul:leading-snug prose-ol:leading-snug prose-th:leading-snug prose-td:leading-snug lg:prose-xl dark:prose-invert dark:prose-pre:bg-neutral-900 first:prose-h1:mt-0 first:prose-h2:mt-0 first:prose-h3:mt-0 first:prose-h4:mt-0 first:prose-h5:mt-0;
+@font-face {
+	font-family: 'PinkChicken';
+	src: url('.././assets/PinkChicken-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+  }
+  
+  nav {
+	transition: transform 0.3s ease-in-out;
+  }
+  
+  .hidden-nav {
+	transform: translateY(100%);
+  }
+  .max-h-10 {
+    max-height: 5.5rem;
 }
-body {
-    cursor: url('https://media.temizmama.com/catalog/dist/media/img/index/activepaw.svg'), auto;
+figcaption {
+    font-family: 'PinkChicken', sans-serif;
+    top: -2rem;
+    position: relative;
+    user-select: none;
+}
+.hashnode-content-style{
+    @apply prose break-words text-slate-950 first:prose-p:mt-0 prose-img:max-w-full prose-p:leading-snug hover:prose-a:bg-primary-50 dark:hover:prose-a:text-primary-500 dark:hover:prose-a:bg-neutral-800 dark:text-neutral-50 prose-blockquote:leading-snug prose-a:leading-snug prose-figure:leading-snug prose-figcaption:leading-snug prose-pre:leading-snug prose-li:leading-snug prose-ul:leading-snug prose-ol:leading-snug prose-th:leading-snug prose-td:leading-snug lg:prose-xl dark:prose-invert dark:prose-pre:bg-neutral-900 first:prose-h1:mt-0 first:prose-h2:mt-0 first:prose-h3:mt-0 first:prose-h4:mt-0 first:prose-h5:mt-0;
 }
 /* Override to remove the backtick */
 .hashnode-content-style :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::before, .hashnode-content-style :where(code):not(:where([class~="not-prose"],[class~="not-prose"] *))::after  {
     content: none;
 }
+.hashnode-content-style :is(:where(a):not(:where([class~=not-prose],[class~=not-prose] *))):hover {
+    background-color: transparent;
+    color: hsl(28, 100%, 50%);
+}
+.hashnode-content-style :is(:where(a):not(:where([class~=not-prose],[class~=not-prose] *))) {
+    text-decoration-line: none;
+}
+div#circusll {
+    --tw-translate-y: 7%;
+    --tw-translate-x: 2%;
+    font-family: monospace;
+}
+.hover\:text-primary-650:hover {
+    --tw-text-opacity: 1;
+    color: rgb(226 121 0);
+}
 
+a.text-gray-700.transition.hover\:text-gray-700\/75 {
+    font-family: ui-monospace;
+}
 .prose code {
     border-radius: 0.25rem;
     font-weight: 400 !important;
@@ -49,24 +88,55 @@ body {
     color: #ddd;
 }
 
+.py-15 {
+	padding-bottom: 1.75rem;
+}
+
+/*   Custom header title css  */
+
+.text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+}
+.mt-2 {
+    margin-top: .5rem;
+}
+.text-purple-500 {
+    --tw-text-opacity: 1;
+    color: rgba(139, 92, 246, var(--tw-text-opacity));
+}
+.max-w-xl {
+    max-width: 36rem;
+}
+h1, h2, h3 {
+    font-family: 'PinkChicken', sans-serif;
+}
 /* Custom Scrollbar */
+/*
 ::-webkit-scrollbar {
-	display: none;
+    display: none;
 }
 
 ::-webkit-scrollbar-track {
-	display: none;
+    display: none;
 }
 
 ::-webkit-scrollbar-thumb {
-	display: none;
+    display: none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	display: none;
+    display: none;
 }
+*/
 
-
+.embed-wrapper {
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+}
+iframe {
+	width: 100% !important;
+}
 /*   scroll-up   */
 
 *,
@@ -88,17 +158,9 @@ html {
 }
 
 #cta {
-	position: sticky;
-	bottom: var(--padding);
-	margin-top: calc(100vh + var(--distance, 0));
-	translate: calc(-100% - var(--padding)) 0;
 	display: grid;
 	white-space: nowrap;
-	place-self: end;
-	border-radius: 100px;
-	background: var(--accent);
 	text-decoration: none;
-	border: 1px solid canvasText;
 	color: canvasText;
 	width: 40px;
 	height: 40px;
@@ -133,8 +195,8 @@ html {
 	}
 	#cta {
 		position: fixed;
-		bottom: var(--padding);
-		right: var(--padding);
+		bottom: 1rem;
+		right: 1rem;
 		translate: 0 calc(20vh - (var(--show, 0) * 20vh));
 		transition: translate 0.875s linear(
 	    0, 0.5007 7.21%, 0.7803 12.29%,
@@ -157,3 +219,24 @@ html {
 	}
 }
 
+::selection {
+    background-color: hsl(30.98deg 100% 39.84% / 22%); 
+}
+
+::-webkit-selection {
+    background-color: hsl(30.98deg 100% 39.84% / 22%);
+}
+h3::selection {
+    background-color: hsl(30.98deg 100% 39.84% / 40%);
+}
+h2::selection {
+    background-color: hsl(30.98deg 100% 39.84% / 50%);
+}
+h1::selection {
+    background-color: hsl(30.98deg 100% 39.84% / 10%);
+}
+img {
+	-webkit-user-drag: none; /* Chrome, Safari, Opera */
+	user-drag: none; /* Standard */
+	pointer-events: none; /* Prevent interactions */
+}

@@ -48,7 +48,7 @@ export default function Post({ publication, post }: Props) {
 		<AppProvider publication={publication}>
 			<Layout>
 				<Header />
-				<Container className="pt-10">
+				<Container className="pt-101">
 					<article className="flex flex-col items-start gap-10 pb-10">
 						<Head>
 							<title>{title}</title>
@@ -58,14 +58,8 @@ export default function Post({ publication, post }: Props) {
 						<PostHeader
 							title={post.title}
 							coverImage={post.coverImage?.url}
-							date={new Date().toISOString()}
-							author={post.author}
-							readTimeInMinutes={post.readTimeInMinutes}
 						/>
 						<MarkdownToHtml contentMarkdown={post.content.markdown} />
-						<div className="mx-auto w-full px-5 text-slate-600 dark:text-neutral-300 md:max-w-screen-md">
-							<ul className="flex flex-row flex-wrap items-center gap-2">{tagsList}</ul>
-						</div>
 					</article>
 				</Container>
 				<Footer />

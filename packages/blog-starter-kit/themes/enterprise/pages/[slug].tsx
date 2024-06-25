@@ -4,11 +4,12 @@ import request from 'graphql-request';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import CircularProgressBar from '../components/CircularProgressBar';
 import Link from 'next/link';
 import { Container } from '../components/container';
 import { AppProvider } from '../components/contexts/appContext';
 import { Footer } from '../components/footer';
-import { Header } from '../components/header';
+import { Navbar } from "../components/navbar";
 import { Layout } from '../components/layout';
 import { MarkdownToHtml } from '../components/markdown-to-html';
 import { PostHeader } from '../components/post-header';
@@ -126,24 +127,14 @@ const Post = ({ publication, post }: PostProps) => {
 				/>
 				<style dangerouslySetInnerHTML={{ __html: highlightJsMonokaiTheme }}></style>
 			</Head>
+			
 			<PostHeader
 				title={post.title}
 				coverImage={post.coverImage?.url}
-				date={post.publishedAt}
-				author={post.author}
-				readTimeInMinutes={post.readTimeInMinutes}
 			/>
 			{post.features.tableOfContents.isEnabled && <PostTOC />}
 			<MarkdownToHtml contentMarkdown={post.content.markdown} />
-			{(post.tags ?? []).length > 0 && (
-				<div className="mx-auto w-full px-5 text-slate-600 dark:text-neutral-300 md:max-w-screen-md">
-					<ul className="flex flex-row flex-wrap items-center gap-2">{tagsList}</ul>
-				</div>
-			)}
-			<AboutAuthor />
-			{!post.preferences.disableComments && post.comments.totalDocuments > 0 && <PostComments />}
-			<Subscribe />
-		</>
+			</>
 	);
 };
 
@@ -167,13 +158,14 @@ export default function PostOrPage(props: Props) {
 	return (
 		<AppProvider publication={publication} post={maybePost} page={maybePage}>
 			<Layout>
-				<Header />
-				<Container className="pt-10">
+				<Navbar />
+				<Container className="pt-101">
 					<article className="flex flex-col items-start gap-10 pb-10">
 						{props.type === 'post' && <Post {...props} />}
 						{props.type === 'page' && <Page {...props} />}
 					</article>
 				</Container>
+				<CircularProgressBar />
 				<Footer />
 			</Layout>
 		</AppProvider>
