@@ -237,6 +237,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 	const postSlugs = (data.publication?.posts.edges ?? []).map((edge) => edge.node.slug);
 
+<<<<<<< HEAD
 	return {
 		paths: postSlugs.map((slug) => {
 			return {
@@ -248,3 +249,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 		fallback: 'blocking',
 	};
 };
+=======
+  return {
+    paths: postSlugs.map((slug) => {
+      return {
+        params: {
+          slug: slug,
+        },
+      };
+    }),
+    fallback: 'blocking', 
+  };
+};
+>>>>>>> e50aa75 (last updated)
