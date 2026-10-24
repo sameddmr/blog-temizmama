@@ -117,6 +117,43 @@ const getRedirectionRules = async () => {
   }
 };
 
+// blog.temizmama.com → www.temizmama.com/blog taşıması.
+// vercel.json yerine burada tanımlı: i18n (defaultLocale: 'tr') açıkken Vercel,
+// vercel.json kurallarından önce path'e `/tr` ekliyor ve hedef `/blog/tr/...` oluyor.
+// Next'in kendi redirect'leri locale önekini source'tan otomatik ayıklıyor.
+const OLD_BLOG_HOST = 'blog.temizmama.com';
+const NEW_SITE_URL = 'https://www.temizmama.com';
+const NEW_BLOG_URL = `${NEW_SITE_URL}/blog`;
+const BLOG_CATEGORIES = [
+  'kedi',
+  'kopek',
+  'kedi-bakimi',
+  'kedi-beslenmesi',
+  'kedi-diger',
+  'kedi-irklari',
+  'kedi-sagligi',
+  'kopek-bakimi',
+  'kopek-beslenmesi',
+  'kopek-diger',
+  'kopek-irklari',
+  'kopek-sagligi',
+];
+
+const getDomainMigrationRedirects = () => {
+  const has = [{ type: 'host', value: OLD_BLOG_HOST }];
+  const rules = [
+    ['/robots.txt', `${NEW_SITE_URL}/robots.txt`],
+    ['/sitemap.xml', `${NEW_SITE_URL}/sitemap.xml`],
+    ['/iletisim', `${NEW_SITE_URL}/iletisim`],
+    ['/:kategori(kedi|kopek)/sayfa/:sayfa', `${NEW_BLOG_URL}/kategori/:kategori`],
+    [`/:kategori(${BLOG_CATEGORIES.join('|')})`, `${NEW_BLOG_URL}/kategori/:kategori`],
+    ['/', NEW_BLOG_URL],
+    ['/:path*', `${NEW_BLOG_URL}/:path*`],
+  ];
+
+  return rules.map(([source, destination]) => ({ source, destination, has, statusCode: 301 }));
+};
+
 const securityHeaders = [
   {
     key: 'Content-Security-Policy',
@@ -229,7 +266,7 @@ const config = {
     ];
   },
   async redirects() {
-    return await getRedirectionRules();
+    return [...getDomainMigrationRedirects(), ...(await getRedirectionRules())];
   },
   async headers() {
     return [
