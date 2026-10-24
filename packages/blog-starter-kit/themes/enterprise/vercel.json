@@ -1,3 +1,47 @@
 {
-    "framework": "nextjs"
+	"framework": "nextjs",
+	"redirects": [
+		{
+			"source": "/robots.txt",
+			"has": [{ "type": "host", "value": "blog.temizmama.com" }],
+			"destination": "https://www.temizmama.com/robots.txt",
+			"statusCode": 301
+		},
+		{
+			"source": "/sitemap.xml",
+			"has": [{ "type": "host", "value": "blog.temizmama.com" }],
+			"destination": "https://www.temizmama.com/sitemap.xml",
+			"statusCode": 301
+		},
+		{
+			"source": "/iletisim",
+			"has": [{ "type": "host", "value": "blog.temizmama.com" }],
+			"destination": "https://www.temizmama.com/iletisim",
+			"statusCode": 301
+		},
+		{
+			"source": "/:kategori(kedi|kopek)/sayfa/:sayfa",
+			"has": [{ "type": "host", "value": "blog.temizmama.com" }],
+			"destination": "https://www.temizmama.com/blog/kategori/:kategori",
+			"statusCode": 301
+		},
+		{
+			"source": "/:kategori(kedi|kopek|kedi-bakimi|kedi-beslenmesi|kedi-diger|kedi-irklari|kedi-sagligi|kopek-bakimi|kopek-beslenmesi|kopek-diger|kopek-irklari|kopek-sagligi)",
+			"has": [{ "type": "host", "value": "blog.temizmama.com" }],
+			"destination": "https://www.temizmama.com/blog/kategori/:kategori",
+			"statusCode": 301
+		},
+		{
+			"source": "/",
+			"has": [{ "type": "host", "value": "blog.temizmama.com" }],
+			"destination": "https://www.temizmama.com/blog",
+			"statusCode": 301
+		},
+		{
+			"source": "/:path*",
+			"has": [{ "type": "host", "value": "blog.temizmama.com" }],
+			"destination": "https://www.temizmama.com/blog/:path*",
+			"statusCode": 301
+		}
+	]
 }
